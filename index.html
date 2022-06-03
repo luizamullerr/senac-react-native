@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <style>
+    *{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: large;
+    }
     .menu{
         background-color: black;
         padding: 20px;
@@ -30,8 +34,18 @@
         border-radius: 10px;
         color: white;
         padding: 10px;
-        border-color: black;
+        border: none;
+
     }
+    button:hover{
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+    }
+   
 </style>
 <body>
     <div class="menu">
@@ -39,7 +53,6 @@
         <a href="cadastro.html" target="centro">Cadastro</a>
         <a href="consultar.html" target="centro">Consulta</a>
         <button id="bt">Login</button>
-         
     </nav>
 </div>
     </script>
