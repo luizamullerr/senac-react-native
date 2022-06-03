@@ -1,0 +1,43 @@
+{
+    "fornecedor": [
+        {
+            "id": 1,
+            "nome": "Doceria",
+            "email": "doceria@gmail.com",
+            "fone": "(00) 0000-0000"
+        },
+        {
+            "id": 2,
+            "nome": "Lanches",
+            "email": "lanches@gmail.com",
+            "fone": "(00) 0000-0000"
+        }
+    ],
+    
+        "venda": [
+            {
+                "id": 1,
+                "data": "01/06/2022",
+                "fornecedor": {
+                    "id": 1,
+                    "nome": "Doceria",
+                    "email": "doceria@gmail.com"
+                },
+                
+                "itens": [
+                    {
+                        "id": 1,
+                        "descricao": "Bolo",
+                        "quantidade": 5,
+                        "preco": 90
+                    },
+                    {
+                        "id": 2,
+                        "descricao": "Pão com Bolinho",
+                        "quantidade": 6,
+                        "preco": 8
+                    }
+                ]
+            }
+        ]
+    }
