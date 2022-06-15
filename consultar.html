@@ -72,14 +72,14 @@
      function load() {
                 fetch("http://localhost:3000/clientes")
                     .then(x => x.json())
-                    .then(itens => {
+                    .then(venda => {
                         linhas = ""
-                        for (let i = 0; i < itens.length; i++) {
+                        for (let i = 0; i < venda.length; i++) {
                             linhas += `<tr> 
-                            <td> ${itens[i].id} </td> 
-                            <td> ${itens[i].descricao} </td> 
-                            <td> ${itens[i].quantidade} </td> 
-                            <td> ${itens[i].preco} </td> 
+                            <td> ${venda[i].id} </td> 
+                            <td> ${venda[i].descricao} </td> 
+                            <td> ${venda[i].quantidade} </td> 
+                            <td> ${venda[i].preco} </td> 
                             </tr>`
                         }
                         document.getElementById("dados").innerHTML = linhas
