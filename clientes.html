@@ -1,12 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>clientes</h1>
-</body>
+    <style>
+        .tabelamenu {
+            border-style: solid;
+            border-radius: 35px;
+            border-top: none;
+            padding: 2px;
+            background-color: rgba(73, 57, 57, 0.4);
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: large;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .clientes {
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+            font-size: larger;
+        }
+
+        th {
+            padding: 30px;
+        }
+    </style>
+
+    <body>
+        <div class="tabelamenu">
+            <h1 style="justify-content: center; display: flex;">CONSULTAR CLIENTES</h1>
+            <div class="menu">
+                <button onclick="load()">Carregar Clientes</button>
+            </div>
+        </div>
+
+        <table class="clientes">
+            <thead>
+                <tr>
+                    <th>ID Cliente</th>
+                    <th>Cliente</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody id="dados">
+
+            </tbody>
+        </table>
+
+    </body>
+    <script>
+            function load() {
+                fetch("http://localhost:3000/clientes")
+                    .then(x => x.json())
+                    .then(clientes => {
+                        linhas = ""
+                        for (let i = 0; i < clientes.length; i++) {
+                            linhas += `<tr> 
+                            <td> ${clientes[i].id} </td> 
+                            <td> ${clientes[i].nome} </td> 
+                            <td> ${clientes[i].email} </td> 
+                            <td> ${clientes[i].fone} </td> 
+                            </tr>`
+                        }
+                        document.getElementById("dados").innerHTML = linhas
+
+
+                    })
+            }
+
+    </script>
+
 </html>
