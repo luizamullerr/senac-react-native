@@ -51,6 +51,6 @@ class Pessoa {
         console.log(`Dados validados com sucesso`)
     }
 */
-
 }
+
 export default Pessoa
