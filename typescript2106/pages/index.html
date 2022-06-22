@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../script/calculos.js"></script>
+</head>
+<style>
+    
+    legend{
+        font-weight: bold;
+    }
+    fieldset{
+        margin-top: 10px;
+        margin-right: 150px;
+        border-radius: 25px;
+    }
+    input{
+        justify-content: center;
+        padding: 2px;
+        border-radius: 15px;
+    }
+    button{
+        cursor: pointer;
+        margin-top: 10px;
+        border-radius: 15px;
+        padding: 5px;
+        width: 90px;
+    }
+ 
+    .escolheroperacao{
+        background-color: thistle;
+        display: grid;
+        justify-content: center;
+        width: 280px;
+        border-color: black;
+        border-radius: 15px;
+    }
+</style>
+
+<body>
+    <div class="escolheroperacao">
+    <input type="number" id="n1" placeholder="Informe número" />
+    <input type="number" id="n2" placeholder="Informe número" />
+   
+        <legend>Escolha o cálculo a ser executado:</legend>
+        <div>
+            <input type="radio" id="escolhersoma" name="scales">
+            <label>Somar</label>
+        </div>
+        <div>
+            <input type="radio" id="escolhersubtrair" name="scales">
+            <label>Subtrair</label>
+        </div>
+        <div>
+            <input type="radio" id="escolhermultiplicar" name="scales">
+            <label>Multiplicar</label>
+        </div>
+        <div>
+            <input type="radio" id="escolherdividir" name="scales">
+            <label>Dividir</label>
+        </div>
+    <button onclick="calcular()">Calcular</button>
+    </div>
+
+    <script>
+        function calcular() {
+            var n1 = parseInt(document.getElementById("n1").value)
+            var n2 = parseInt(document.getElementById("n2").value) //passar valores do html para o soma.js
+
+            var retorno
+
+            if (document.getElementById("escolhersoma").checked) {
+                retorno = somar(n1, n2)
+                alert(`Soma: ${retorno}`)
+            }
+            if (document.getElementById("escolhersubtrair").checked) {
+                retorno = subtrair(n1, n2)
+                alert(`Subtração: ${retorno}`)
+            }
+            if (document.getElementById("escolhermultiplicar").checked) {
+                retorno = multiplicar(n1, n2)
+                alert(`Multiplicação: ${retorno}`)
+            }
+            if (document.getElementById("escolherdividir").checked) {
+                retorno = dividir(n1, n2)
+                alert(`Divisão: ${retorno}`)
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
