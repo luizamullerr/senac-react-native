@@ -34,6 +34,8 @@ class Venda{
     itens:ItemVenda[]
     constructor (id:number, itens: ItemVenda){
         this.id = id
-        this.itens = itens
+        this.itens = [itens]
     }
 }
+let it1 = new Venda(3,item1)
+console.log(it1)
